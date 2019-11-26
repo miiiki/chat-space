@@ -1,0 +1,11 @@
+.form
+  .new-message
+
+    .input-box
+      %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+
+      %label.input-box__image
+        =icon('far fa-image', class: "icon")
+        %input{type: "file", class: "input-box__image__file"}
+
+    %input{type: "submit", value: "Send", class: "submit-btn"}
