@@ -2,16 +2,15 @@
   .side-header
     .side-header__box
       %p.side-header__box__user-name 
-        ううう
+        = current_user.name
       %ul.side-header__box__menu
         %li.side-header__box__menu__new-group
-          = link_to "#",class: "" do
-            = icon('far fa-edit',  class: "contents__btn--icon")
+          = link_to "#" do
+            = icon('fas','edit',  class: 'icon')
         %li.side-header__box__menu__edit-user
-          = link_to "#", class: "" do
-            = icon('fas fa-cog',  class: "contents__btn--icon")
+          = link_to edit_user_path(current_user) do
+            = icon('fas','cog',  class: 'icon')
   .groups
     .group
-      %p.group__group-name アイウエオ
+      %p.group__group-name グループ名
       %p.group__latest-message まだメッセージがありません
-

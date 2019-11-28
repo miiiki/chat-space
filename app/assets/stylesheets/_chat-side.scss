@@ -37,7 +37,7 @@ box-sizing: border-box;
       list-style: none;
       li {
         margin-left: 5px;
-        a {
+      .icon{
         color: white;
         }
       }
@@ -57,14 +57,14 @@ box-sizing: border-box;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      &__group-name {
+      &__name {
         font-size: 15px;
         margin-bottom: 5px;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-      &__latest-message {
+      &__message {
         font-size: 11px;
         margin: 0;
         padding: 0;
