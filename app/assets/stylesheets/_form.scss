@@ -5,12 +5,12 @@
   background-color: #ddd;
   box-sizing: border-box;
 }
-  .new-message {
+  .new_message {
     display: flex;
   }
     .input-box {
       position: relative;
-      width: 100%;
+      // width: 100%;
       &__text {
         height: 50px;
         width: 100%;

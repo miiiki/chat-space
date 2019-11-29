@@ -1,11 +1,33 @@
+-# .form
+-#   .new-message
+
+-#     .input-box
+-#       %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}
+
+-#       %label.input-box__image
+-#         =icon('far fa-image', class: "icon")
+-#         %input{type: "file", class: "input-box__image__file"}
+
+-#     %input{type: "submit", value: "Send", class: "submit-btn"}
+
+-# .form
+-#       = form_for [@group, @message] do |f|
+-#         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+-#         .form__mask
+-#           = f.label :image, class: 'form__mask__image' do
+-#             = icon('fas', 'image', class: 'icon')
+-#             = f.file_field :image, class: 'hidden'
+-#         = f.submit 'Send', class: 'form__submit'
+
+
+
+
 .form
   .new-message
-
+  = form_for [@group, @message] do |f|
+    = f.text_field :content, class: 'input-box__text', placeholder: 'type a message', type: "text"
     .input-box
-      %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}
-
-      %label.input-box__image
-        =icon('far fa-image', class: "icon")
-        %input{type: "file", class: "input-box__image__file"}
-
-    %input{type: "submit", value: "Send", class: "submit-btn"}
+      = f.label :image, class: 'input-box__image' do
+        = icon('far fa-image', class: 'icon')
+        = f.file_field :image, class: 'input-box__image__file'
+    = f.submit 'Send', class: 'submit-btn'
