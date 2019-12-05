@@ -1,4 +1,4 @@
-.message
+.message{"data-message-id": "#{message.id}"}
 
   .message__info
     
@@ -7,7 +7,7 @@
       = message.user.name
 
     .message__upper-info__date
-      = message.created_at
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
   .message__text
     - if message.content.present?
       %p.lower-message__content
