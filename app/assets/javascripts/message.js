@@ -1,42 +1,43 @@
 $(function(){
-  //last_message_id = $('.message').data("message-id");
-  // console.log(last_message_id);
   function buildHTML(message){
+
+
+
     if(message.image && message.content){
-      var html = `<div class="message" data-message_id=` + message.id + `>` +
-        `<div class="message">` +
-          `<div class="message__info">` +
-            `<div class="message__upper-info__user">` +
-              message.user_name +
-            `</div>` +
-            `<div class="message__upper-info__date">` +
-              message.date +
-            `</div>` +
-          `</div>` +
-          `<div class="message__text">` +
-            `<p class="lower-message__content">` +
-              message.content +
-            `</p>` +
-              `<img src= "` + message.image+ `" class="lower-message__image" >` +
-              `</div>` +
-          `</div>` +
+      var html = `<div class="message" data-message_id=` + message.id + `>` 
+        `<div class="message">` 
+          `<div class="message__info">` 
+            `<div class="message__upper-info__user">` 
+              message.user_name 
+            `</div>` 
+            `<div class="message__upper-info__date">` 
+              message.date 
+            `</div>` 
+          `</div>` 
+          `<div class="message__text">` 
+            `<p class="lower-message__content">` 
+              message.content 
+            `</p>` 
+              `<img src= "` + message.image+ `" class="lower-message__image" >` 
+              `</div>` 
+          `</div>` 
         `</div>`
 } else if (message.content) {
-    var html = `<div class="message" data-message_id=` + message.id + `>` +
-    `<div class="message">` +
-    `<div class="message__info">` +
-      `<div class="message__upper-info__user">` +
-        message.user_name +
-      `</div>` +
-      `<div class="message__upper-info__date">` +
-        message.date +
-      `</div>` +
-    `</div>` +
-    `<div class="message__text">` +
-      `<p class="lower-message__content">` +
-        message.content +
-      `</p>` +
-      `</div>`+
+    var html = `<div class="message" data-message_id=` + message.id + `>` 
+    `<div class="message">` 
+    `<div class="message__info">` 
+      `<div class="message__upper-info__user">` 
+        message.user_name 
+      `</div>` 
+      `<div class="message__upper-info__date">` 
+        message.date 
+      `</div>` 
+    `</div>` 
+    `<div class="message__text">` 
+      `<p class="lower-message__content">` 
+        message.content 
+      `</p>` 
+      `</div>`
   `</div>`
 };
     return html;
@@ -89,7 +90,7 @@ $(function(){
       
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
     };
   };
