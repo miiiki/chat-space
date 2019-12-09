@@ -1,48 +1,25 @@
 $(function(){
   function buildHTML(message){
-
-
-
-    if(message.image && message.content){
-      var html = `<div class="message" data-message_id=` + message.id + `>` 
-        `<div class="message">` 
-          `<div class="message__info">` 
-            `<div class="message__upper-info__user">` 
-              message.user_name 
-            `</div>` 
-            `<div class="message__upper-info__date">` 
-              message.date 
-            `</div>` 
-          `</div>` 
-          `<div class="message__text">` 
-            `<p class="lower-message__content">` 
-              message.content 
-            `</p>` 
-              `<img src= "` + message.image+ `" class="lower-message__image" >` 
-              `</div>` 
-          `</div>` 
-        `</div>`
-} else if (message.content) {
-    var html = `<div class="message" data-message_id=` + message.id + `>` 
-    `<div class="message">` 
-    `<div class="message__info">` 
-      `<div class="message__upper-info__user">` 
-        message.user_name 
-      `</div>` 
-      `<div class="message__upper-info__date">` 
-        message.date 
-      `</div>` 
-    `</div>` 
-    `<div class="message__text">` 
-      `<p class="lower-message__content">` 
-        message.content 
-      `</p>` 
-      `</div>`
-  `</div>`
-};
-    return html;
-  };
-
+    image = ( message.image ) ? `<img class= "lower-message__image" src=${message.image} >` : "";
+    var html =
+      `<div class="message" data-message-id= "${message.id}">
+        <div class="message__upper-info">
+          <div class="message__upper-info__talker">
+            ${message.user_name}
+          </div>
+          <div class="message__upper-info__date">
+            ${message.date}
+          </div>
+        </div>
+        <div class="message__text">
+          <p class="message__text__content">
+            ${message.content}
+          </p>
+        </div>
+        ${image}
+      </div>`
+  return html;
+}
 
   $('.new_message').on('submit', function(e){
     e.preventDefault();
@@ -60,7 +37,7 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.new_message')[0].reset();
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight},'fast');
     })
     .fail(function() {
       alert('エラー');
